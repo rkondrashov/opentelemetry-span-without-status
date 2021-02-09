@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+
+  opentelemetry-span-without-status:
+    image: com.example/opentelemetry-span-without-status:1.0.0
+    hostname: opentelemetry-span-without-status
+    ports:
+      - 8080:8080
+    network_mode: bridge
+    links:
+      - httpbin:httpbin
+      - jaeger:jaeger
+    environment:
+      HTTPBIN_URI: http://httpbin/status
+      OTEL_TRACE_EXPORTER: jaeger
+      OTEL_EXPORTER_JAEGER_ENDPOINT: jaeger:14250
+      OTEL_METRICS_EXPORTER: none
+      OTEL_RESOURCE_ATTRIBUTES: "service.namespace=example,service.name=opentelemetry-span-without-status,service.version=0.0.1,service.instance.id=10b83008-ef23-4892-ba8a-13a12f8bfd57"
+
+  httpbin:
+    image: kennethreitz/httpbin:latest
+    hostname: httpbin
+    network_mode: bridge
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    hostname: jaeger
+    ports:
+      - 16686:16686
+    network_mode: bridge

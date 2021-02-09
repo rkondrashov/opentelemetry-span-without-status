@@ -1,0 +1,348 @@
+{
+  "data": [
+    {
+      "traceID": "1b0cadf3b4e2a0a8c6e49153055ef2f0",
+      "spans": [
+        {
+          "traceID": "1b0cadf3b4e2a0a8c6e49153055ef2f0",
+          "spanID": "5de4988b2403dce9",
+          "operationName": "ExampleController.get",
+          "references": [
+            {
+              "refType": "CHILD_OF",
+              "traceID": "1b0cadf3b4e2a0a8c6e49153055ef2f0",
+              "spanID": "307e6d2cf58bdf48"
+            }
+          ],
+          "startTime": 1612880539937979,
+          "duration": 16789,
+          "tags": [
+            {
+              "key": "thread.id",
+              "type": "int64",
+              "value": 24
+            },
+            {
+              "key": "thread.name",
+              "type": "string",
+              "value": "http-nio-8080-exec-2"
+            },
+            {
+              "key": "otel.library.name",
+              "type": "string",
+              "value": "io.opentelemetry.javaagent.spring-webmvc"
+            },
+            {
+              "key": "otel.library.version",
+              "type": "string",
+              "value": "0.15.1"
+            },
+            {
+              "key": "internal.span.format",
+              "type": "string",
+              "value": "proto"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "1b0cadf3b4e2a0a8c6e49153055ef2f0",
+          "spanID": "85faaec1604114be",
+          "operationName": "HTTP GET",
+          "references": [
+            {
+              "refType": "CHILD_OF",
+              "traceID": "1b0cadf3b4e2a0a8c6e49153055ef2f0",
+              "spanID": "5de4988b2403dce9"
+            }
+          ],
+          "startTime": 1612880539939167,
+          "duration": 10953,
+          "tags": [
+            {
+              "key": "thread.id",
+              "type": "int64",
+              "value": 24
+            },
+            {
+              "key": "thread.name",
+              "type": "string",
+              "value": "http-nio-8080-exec-2"
+            },
+            {
+              "key": "net.transport",
+              "type": "string",
+              "value": "IP.TCP"
+            },
+            {
+              "key": "http.method",
+              "type": "string",
+              "value": "GET"
+            },
+            {
+              "key": "http.flavor",
+              "type": "string",
+              "value": "1.1"
+            },
+            {
+              "key": "net.peer.name",
+              "type": "string",
+              "value": "httpbin"
+            },
+            {
+              "key": "http.url",
+              "type": "string",
+              "value": "http://httpbin/status/500"
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "client"
+            },
+            {
+              "key": "otel.status_code",
+              "type": "string",
+              "value": "ERROR"
+            },
+            {
+              "key": "otel.library.name",
+              "type": "string",
+              "value": "io.opentelemetry.javaagent.http-url-connection"
+            },
+            {
+              "key": "otel.library.version",
+              "type": "string",
+              "value": "0.15.1"
+            },
+            {
+              "key": "error",
+              "type": "bool",
+              "value": true
+            },
+            {
+              "key": "internal.span.format",
+              "type": "string",
+              "value": "proto"
+            }
+          ],
+          "logs": [
+            {
+              "timestamp": 1612880539947922,
+              "fields": [
+                {
+                  "key": "event",
+                  "type": "string",
+                  "value": "exception"
+                },
+                {
+                  "key": "exception.message",
+                  "type": "string",
+                  "value": "Server returned HTTP response code: 500 for URL: http://httpbin/status/500"
+                },
+                {
+                  "key": "exception.stacktrace",
+                  "type": "string",
+                  "value": "java.io.IOException: Server returned HTTP response code: 500 for URL: http://httpbin/status/500\n\tat java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)\n\tat java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)\n\tat java.base/java.net.HttpURLConnection.getResponseCode(Unknown Source)\n\tat org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:82)\n\tat org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)\n\tat org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)\n\tat org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:775)\n\tat org.springframework.web.client.RestTemplate.execute(RestTemplate.java:710)\n\tat org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:601)\n\tat com.example.ExampleController.get(ExampleController.java:33)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:626)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:733)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat io.opentelemetry.javaagent.instrumentation.springwebmvc.HandlerMappingResourceNameFilter.doFilter(HandlerMappingResourceNameFilter.java:59)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.base/java.lang.Thread.run(Unknown Source)\n"
+                },
+                {
+                  "key": "exception.type",
+                  "type": "string",
+                  "value": "java.io.IOException"
+                }
+              ]
+            }
+          ],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "1b0cadf3b4e2a0a8c6e49153055ef2f0",
+          "spanID": "307e6d2cf58bdf48",
+          "operationName": "/{status}",
+          "references": [],
+          "startTime": 1612880539936002,
+          "duration": 20799,
+          "tags": [
+            {
+              "key": "thread.id",
+              "type": "int64",
+              "value": 24
+            },
+            {
+              "key": "thread.name",
+              "type": "string",
+              "value": "http-nio-8080-exec-2"
+            },
+            {
+              "key": "http.method",
+              "type": "string",
+              "value": "GET"
+            },
+            {
+              "key": "http.user_agent",
+              "type": "string",
+              "value": "curl/7.68.0"
+            },
+            {
+              "key": "http.url",
+              "type": "string",
+              "value": "http://localhost:8080/500"
+            },
+            {
+              "key": "http.flavor",
+              "type": "string",
+              "value": "HTTP/1.1"
+            },
+            {
+              "key": "http.status_code",
+              "type": "int64",
+              "value": 500
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "server"
+            },
+            {
+              "key": "otel.status_code",
+              "type": "string",
+              "value": "ERROR"
+            },
+            {
+              "key": "otel.library.name",
+              "type": "string",
+              "value": "io.opentelemetry.javaagent.tomcat"
+            },
+            {
+              "key": "otel.library.version",
+              "type": "string",
+              "value": "0.15.1"
+            },
+            {
+              "key": "error",
+              "type": "bool",
+              "value": true
+            },
+            {
+              "key": "internal.span.format",
+              "type": "string",
+              "value": "proto"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        }
+      ],
+      "processes": {
+        "p1": {
+          "serviceName": "opentelemetry-span-without-status",
+          "tags": [
+            {
+              "key": "jaeger.version",
+              "type": "string",
+              "value": "opentelemetry-java"
+            },
+            {
+              "key": "ip",
+              "type": "string",
+              "value": "192.168.122.4"
+            },
+            {
+              "key": "hostname",
+              "type": "string",
+              "value": "opentelemetry-span-without-status"
+            },
+            {
+              "key": "os.description",
+              "type": "string",
+              "value": "Linux 5.8.0-41-generic"
+            },
+            {
+              "key": "os.type",
+              "type": "string",
+              "value": "LINUX"
+            },
+            {
+              "key": "process.command_line",
+              "type": "string",
+              "value": "/opt/java/openjdk:bin:java -javaagent:/usr/local/share/opentelemetry/opentelemetry-javaagent-all.jar"
+            },
+            {
+              "key": "process.executable.path",
+              "type": "string",
+              "value": "/opt/java/openjdk:bin:java"
+            },
+            {
+              "key": "process.pid",
+              "type": "int64",
+              "value": 1
+            },
+            {
+              "key": "process.runtime.description",
+              "type": "string",
+              "value": "AdoptOpenJDK OpenJDK 64-Bit Server VM 11.0.10+9"
+            },
+            {
+              "key": "process.runtime.name",
+              "type": "string",
+              "value": "OpenJDK Runtime Environment"
+            },
+            {
+              "key": "process.runtime.version",
+              "type": "string",
+              "value": "11.0.10+9"
+            },
+            {
+              "key": "service.instance.id",
+              "type": "string",
+              "value": "10b83008-ef23-4892-ba8a-13a12f8bfd57"
+            },
+            {
+              "key": "service.name",
+              "type": "string",
+              "value": "opentelemetry-span-without-status"
+            },
+            {
+              "key": "service.namespace",
+              "type": "string",
+              "value": "example"
+            },
+            {
+              "key": "service.version",
+              "type": "string",
+              "value": "0.0.1"
+            },
+            {
+              "key": "telemetry.auto.version",
+              "type": "string",
+              "value": "0.15.1"
+            },
+            {
+              "key": "telemetry.sdk.language",
+              "type": "string",
+              "value": "java"
+            },
+            {
+              "key": "telemetry.sdk.name",
+              "type": "string",
+              "value": "opentelemetry"
+            },
+            {
+              "key": "telemetry.sdk.version",
+              "type": "string",
+              "value": "0.15.0"
+            }
+          ]
+        }
+      },
+      "warnings": null
+    }
+  ],
+  "total": 0,
+  "limit": 0,
+  "offset": 0,
+  "errors": null
+}
