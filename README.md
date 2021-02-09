@@ -1,4 +1,4 @@
-# Spans without status attribute created by http-url-connection instrumentation
+# Spans without http.status_code attribute created by http-url-connection instrumentation
 
 ## Description
 
