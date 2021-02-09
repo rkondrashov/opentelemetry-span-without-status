@@ -2,9 +2,9 @@
 
 ## Description
 
-Spans for HTTP calls made using `HttpURLConnection` or a client like `RestTemplate` from Spring Boot, which uses it, have no `http.status_code` attribute on errors with response statuses 4xx and 5xx. If a response has status 1xx, 2xx or 3xx the attribute is present.
+Spans for HTTP calls made using `HttpURLConnection` or a client like `RestTemplate` from Spring Boot, which uses it, have no `http.status_code` attribute on errors with response status 4xx and 5xx. If a response has status 1xx, 2xx or 3xx the attribute is present.
 
-| **States 1xx, 2xx and 3xx**          | **States 4xx and 5xx**               |
+| **Status 1xx, 2xx and 3xx**          | **Status 4xx and 5xx**               |
 | ------------------------------------ | ------------------------------------ |
 | ![](screenshots/http-status-200.png) | ![](screenshots/http-status-500.png) |
 
