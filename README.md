@@ -15,3 +15,16 @@ Spans for HTTP calls made using `HttpURLConnection` or a client like `RestTempla
 3. Call `./calls.sh` script to perform some HTTP calls to the service.
 4. Take a look at traces in jaeger UI - [http://localhost:16686](http://localhost:16686).
 5. Stop all components using `docker-compose down`.
+
+Alternatively the service could be started without docker:
+
+1. Build the project with `mvn -Dexec.skip clean package`.
+2. Start the service:
+```bash
+java -javaagent:path/to/opentelemetry-javaagent-all.jar \
+       -Dotel.traces.exporter=logging \
+       -Dotel.metrics.exporter=none \
+       -jar target/opentelemetry-span-without-status-1.0.0.jar \
+       --httpbin.uri=https://httpbin.org/status
+```
+3. Call `./calls.sh` script to perform some HTTP calls to the service.
